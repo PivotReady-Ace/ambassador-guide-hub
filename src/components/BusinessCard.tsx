@@ -1,7 +1,14 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, MapPin, MessageCircle, CheckCircle, Users, Eye } from "lucide-react";
+import { Star, MapPin, MessageCircle, CheckCircle, Users, Eye, Globe, Heart, Shield, Baby, Car, CreditCard } from "lucide-react";
+
+interface ServiceTag {
+  type: 'language' | 'identity' | 'service' | 'payment';
+  label: string;
+  icon: React.ReactNode;
+  color: 'success' | 'primary' | 'accent' | 'secondary';
+}
 
 interface BusinessCardProps {
   business: {
@@ -14,6 +21,7 @@ interface BusinessCardProps {
     whatsapp: string;
     verified: boolean;
     referrers: string[];
+    serviceTags?: ServiceTag[];
     identityReviews?: {
       count: number;
       identity: string;
@@ -69,6 +77,27 @@ export const BusinessCard = ({ business }: BusinessCardProps) => {
           <span className="font-semibold">{business.rating}</span>
           <span className="text-muted-foreground">({business.reviewCount} reviews)</span>
         </div>
+
+        {/* Service Tags */}
+        {business.serviceTags && business.serviceTags.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {business.serviceTags.map((tag, index) => (
+              <Badge 
+                key={index} 
+                variant="outline" 
+                className={`gap-1 text-xs ${
+                  tag.color === 'success' ? 'border-success/30 text-success bg-success/10' :
+                  tag.color === 'primary' ? 'border-primary/30 text-primary bg-primary/10' :
+                  tag.color === 'accent' ? 'border-accent/30 text-accent bg-accent/10' :
+                  'border-secondary/30 text-secondary-foreground bg-secondary/20'
+                }`}
+              >
+                {tag.icon}
+                {tag.label}
+              </Badge>
+            ))}
+          </div>
+        )}
 
         {/* Referrer Info */}
         <div className="flex items-center gap-2 text-sm">

@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { BusinessCard } from "./BusinessCard";
+import { Globe, Heart, Shield, Baby, Car, CreditCard } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
+
+interface ServiceTag {
+  type: 'language' | 'identity' | 'service' | 'payment';
+  label: string;
+  icon: React.ReactNode;
+  color: 'success' | 'primary' | 'accent' | 'secondary';
+}
 
 const mockBusinesses = [
   {
@@ -15,6 +23,11 @@ const mockBusinesses = [
     whatsapp: "50765551234",
     verified: true,
     referrers: ["Mike", "Sarah", "John"],
+    serviceTags: [
+      { type: 'language' as const, label: 'English-speaking', icon: <Globe className="w-3 h-3" />, color: 'success' as const },
+      { type: 'identity' as const, label: 'LGBTQI+ friendly', icon: <Heart className="w-3 h-3" />, color: 'accent' as const },
+      { type: 'service' as const, label: 'Evening hours', icon: <Shield className="w-3 h-3" />, color: 'primary' as const }
+    ],
     identityReviews: {
       count: 23,
       identity: "LGBTQI+ expats"
@@ -31,6 +44,11 @@ const mockBusinesses = [
     whatsapp: "50765551235",
     verified: true,
     referrers: ["Mike"],
+    serviceTags: [
+      { type: 'language' as const, label: 'English-speaking', icon: <Globe className="w-3 h-3" />, color: 'success' as const },
+      { type: 'service' as const, label: 'Child-friendly', icon: <Baby className="w-3 h-3" />, color: 'accent' as const },
+      { type: 'payment' as const, label: 'Insurance accepted', icon: <CreditCard className="w-3 h-3" />, color: 'primary' as const }
+    ],
     identityReviews: {
       count: 34,
       identity: "Black families"
@@ -47,6 +65,10 @@ const mockBusinesses = [
     whatsapp: "50765551236",
     verified: false,
     referrers: ["Mike", "Ana"],
+    serviceTags: [
+      { type: 'language' as const, label: 'English-speaking', icon: <Globe className="w-3 h-3" />, color: 'success' as const },
+      { type: 'service' as const, label: 'Transport included', icon: <Car className="w-3 h-3" />, color: 'primary' as const }
+    ],
     recentlyAdded: false
   },
   {
@@ -59,6 +81,11 @@ const mockBusinesses = [
     whatsapp: "50765551237",
     verified: true,
     referrers: ["Mike", "Roberto", "Lisa"],
+    serviceTags: [
+      { type: 'language' as const, label: 'English-speaking', icon: <Globe className="w-3 h-3" />, color: 'success' as const },
+      { type: 'identity' as const, label: 'Senior-friendly', icon: <Shield className="w-3 h-3" />, color: 'accent' as const },
+      { type: 'payment' as const, label: 'USD accepted', icon: <CreditCard className="w-3 h-3" />, color: 'primary' as const }
+    ],
     identityReviews: {
       count: 45,
       identity: "retirees"
@@ -75,6 +102,10 @@ const mockBusinesses = [
     whatsapp: "50765551238",
     verified: true,
     referrers: ["Mike"],
+    serviceTags: [
+      { type: 'language' as const, label: 'English-speaking', icon: <Globe className="w-3 h-3" />, color: 'success' as const },
+      { type: 'service' as const, label: 'Emergency hours', icon: <Shield className="w-3 h-3" />, color: 'primary' as const }
+    ],
     recentlyAdded: true
   },
   {
@@ -87,6 +118,11 @@ const mockBusinesses = [
     whatsapp: "50765551239",
     verified: true,
     referrers: ["Mike", "Sofia"],
+    serviceTags: [
+      { type: 'language' as const, label: 'English-speaking', icon: <Globe className="w-3 h-3" />, color: 'success' as const },
+      { type: 'service' as const, label: 'Tax expertise', icon: <Shield className="w-3 h-3" />, color: 'primary' as const },
+      { type: 'service' as const, label: 'Digital meetings', icon: <Car className="w-3 h-3" />, color: 'secondary' as const }
+    ],
     identityReviews: {
       count: 28,
       identity: "small business owners"
