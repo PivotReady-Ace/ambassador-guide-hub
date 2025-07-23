@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AmbassadorProfile } from "@/components/AmbassadorProfile";
 import { FilterSection } from "@/components/FilterSection";
+import { FAQSection } from "@/components/FAQSection";
 import { BusinessList } from "@/components/BusinessList";
 import { ReviewSection } from "@/components/ReviewSection";
 import { Footer } from "@/components/Footer";
@@ -24,6 +25,11 @@ const Index = () => {
 
         {/* Business Directory */}
         <BusinessList />
+
+        {/* FAQ Section */}
+        <div className="mt-16">
+          <FAQSection />
+        </div>
 
         {/* Reviews Section */}
         <div className="mt-16">
