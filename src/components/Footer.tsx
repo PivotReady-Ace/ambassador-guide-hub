@@ -59,34 +59,11 @@ export const Footer = () => {
             © 2024 Mike's Panama Network. All rights reserved.
           </div>
           
-          <div className="flex items-center gap-3 text-sm text-muted-foreground">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span>Powered by</span>
-            <div className="flex items-center gap-2 bg-[#1B3B5D] px-3 py-1 rounded">
-              <div className="flex items-center gap-0.5">
-                <div className="w-3 h-3 bg-[#F5D642] rounded-full relative">
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-[#F5D642] rounded-full"></div>
-                  <div className="absolute top-0 -left-1 w-2 h-2 bg-[#F5D642] rounded-full"></div>
-                  <div className="absolute top-0 -right-1 w-2 h-2 bg-[#F5D642] rounded-full"></div>
-                </div>
-                <div className="w-3 h-3 bg-[#2B9B8A] rounded-full relative ml-1">
-                  <div className="absolute top-0 -left-1 w-2 h-2 bg-[#2B9B8A] rounded-full"></div>
-                  <div className="absolute top-0 -right-1 w-2 h-2 bg-[#2B9B8A] rounded-full"></div>
-                </div>
-                <div className="w-3 h-3 bg-[#E17B47] rounded-full relative ml-1">
-                  <div className="absolute top-0 -left-1 w-2 h-2 bg-[#E17B47] rounded-full"></div>
-                  <div className="absolute top-0 -right-1 w-2 h-2 bg-[#E17B47] rounded-full"></div>
-                </div>
-                <div className="w-3 h-3 bg-[#4ECDD4] rounded-full relative ml-1">
-                  <div className="absolute top-0 -left-1 w-2 h-2 bg-[#4ECDD4] rounded-full"></div>
-                  <div className="absolute top-0 -right-1 w-2 h-2 bg-[#4ECDD4] rounded-full"></div>
-                </div>
-                <div className="w-3 h-3 bg-[#ED4545] rounded-full relative ml-1">
-                  <div className="absolute top-0 -left-1 w-2 h-2 bg-[#ED4545] rounded-full"></div>
-                  <div className="absolute top-0 -right-1 w-2 h-2 bg-[#ED4545] rounded-full"></div>
-                </div>
-              </div>
-              <span className="text-white font-semibold text-sm ml-2">Comuniti</span>
-            </div>
+            <Button variant="link" className="h-auto p-0 text-primary font-semibold">
+              Comuniti
+            </Button>
           </div>
         </div>
 
