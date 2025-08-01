@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BusinessCard } from "./BusinessCard";
-import { Globe, Heart, Shield, Baby, Car, CreditCard } from "lucide-react";
+import { Globe, Heart, Shield, Baby, Car, CreditCard, Star } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -46,6 +46,7 @@ const mockBusinesses = [
     referrers: ["Mike"],
     serviceTags: [
       { type: 'language' as const, label: 'English-speaking', icon: <Globe className="w-3 h-3" />, color: 'success' as const },
+      { type: 'identity' as const, label: 'Black Owned', icon: <Star className="w-3 h-3" />, color: 'accent' as const },
       { type: 'service' as const, label: 'Child-friendly', icon: <Baby className="w-3 h-3" />, color: 'accent' as const },
       { type: 'payment' as const, label: 'Insurance accepted', icon: <CreditCard className="w-3 h-3" />, color: 'primary' as const }
     ],
